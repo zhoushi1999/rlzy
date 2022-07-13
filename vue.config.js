@@ -35,6 +35,14 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
+    },
+    // proxy反向代理，解决跨域问题
+    proxy: {
+      'abc': {
+        target: 'http://ihrm.itheima.net/',
+        changeOrigin: true,
+        pathRewrite: { '^/abc': '' }
+      }
     }
     // 真正的项目有自己的接口，不需要模拟假数据
     // before: require('./mock/mock-server.js')
